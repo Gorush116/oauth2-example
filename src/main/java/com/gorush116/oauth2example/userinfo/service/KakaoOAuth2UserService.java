@@ -27,6 +27,7 @@ public class KakaoOAuth2UserService extends DefaultOAuth2UserService {
         Map<String, Object> attributes = oAuth2User.getAttributes();
 
         log.info("attributes :: " + attributes);
+        // 주석
 
         httpSession.setAttribute("login_info", attributes);
 
