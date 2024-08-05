@@ -19,19 +19,19 @@ import java.util.Map;
 @Service
 public class KakaoOAuth2UserService extends DefaultOAuth2UserService {
 
-    private final HttpSession httpSession;
-
-    @Override
-    public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
-        OAuth2User oAuth2User = super.loadUser(userRequest);
-        Map<String, Object> attributes = oAuth2User.getAttributes();
-
-        log.info("attributes :: " + attributes);
-        // 주석
-
-        httpSession.setAttribute("login_info", attributes);
-
-        return new DefaultOAuth2User(Collections.singleton(new SimpleGrantedAuthority("ROLE_USER")),
-                oAuth2User.getAttributes(), "id");
-    }
+//    private final HttpSession httpSession;
+//
+//    @Override
+//    public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
+//        OAuth2User oAuth2User = super.loadUser(userRequest);
+//        Map<String, Object> attributes = oAuth2User.getAttributes();
+//
+//        log.info("attributes :: " + attributes);
+//        // 주석
+//
+//        httpSession.setAttribute("login_info", attributes);
+//
+//        return new DefaultOAuth2User(Collections.singleton(new SimpleGrantedAuthority("ROLE_USER")),
+//                oAuth2User.getAttributes(), "id");
+//    }
 }
